@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site avec l'aide de l'IA</title>
+    
+    <!-- FullCalendar 5.x CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid/main.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/11/15/11/20241115110802-U05A9TS1.json" rel="stylesheet" />
+    
+    <!-- Mon style personnalisé -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Contenu principal -->
+    <div class="content">
+        <!-- Section Accueil -->
+        <section id="home" class="page">
+            <h1>Bienvenue sur mon site</h1>
+            <p>Ce site utilise une IA pour répondre à vos questions et possède aussi un planning interactif.</p>
+        </section>
+
+        <!-- Section Chat avec OpenAI -->
+        <section id="chat" class="page" style="display: none;">
+            <h1>Chat avec l'IA</h1>
+            <div id="chat-box">
+                <iframe 
+            src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/11/15/11/20241115110802-U05A9TS1.json" 
+            style="width: 100%; height: 100%; border: none;">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Section Planning -->
+        <section id="planning" class="page" style="display: none;">
+            <h1>Votre Planning</h1>
+            <div id="calendar">
+                <iframe name="InlineFrame1" id="InlineFrame1" style="width:180px;height:220px;" src="https://www.mathieuweb.fr/calendrier/calendrier-des-semaines.php?nb_mois=1&nb_mois_ligne=4&mois=&an=&langue=fr&texte_color=B9CBDD&week_color=DAE9F8&week_end_color=C7DAED&police_color=453413&sel=true" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+        </section>
+    </div>
+
+    <!-- Barre de navigation en bas -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home" onclick="showTab('home')">Accueil</a></li>
+            <li><a href="#chat" onclick="showTab('chat')">Chat</a></li>
+            <li><a href="#planning" onclick="showTab('planning')">Planning</a></li>
+        </ul>
+    </nav>
+
+    <!-- FullCalendar 5.x JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction/main.min.js"></script>
+
+    <!-- Mon script JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

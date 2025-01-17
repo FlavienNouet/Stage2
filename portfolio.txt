@@ -1,0 +1,63 @@
+
+
+.skills__item {
+    min-width: calc(33.33% - 20px); /* Assure que les items ont une taille définie */
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(242, 241, 241, 0.1);
+    flex-shrink: 0; /* Empêche les items de se rétrécir */
+}
+
+.skills__titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills__name {
+    font-size: var(--larger-font-size);
+    font-weight: var(--weight-500);
+}
+
+.skills__description {
+    margin-block: 1rem 1.8rem;
+    font-size: var(--normal-font-size);
+}
+
+/* Animation pour le défilement des items */
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Ajusté pour couvrir la moitié du contenu */
+    }
+}
+
+/* Styles des cercles et barres */
+.skills__bar {
+    background-color: var(--border-color);
+    height: 2px;
+    position: relative;
+    width: 100%;
+}
+
+.skills__percentage {
+    background-color: var(--first-color);
+    height: 2px;
+    position: relative;
+    width: 0;
+    transition: width 0.4s ease-in-out;
+}
+
+.skills__percentage span {
+    background-color: var(--container-color);
+    border: 2px solid var(--border-color);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: -0.75rem;
+}
